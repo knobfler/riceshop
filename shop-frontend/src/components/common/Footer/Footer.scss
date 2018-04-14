@@ -1,0 +1,25 @@
+
+@import 'utils';
+
+.footer {
+    background: $oc-gray-4;
+    height: 10rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+    .brand {
+        color: white;
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    .admin-login {
+        margin-top: 0.5rem;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,26 @@
+@import 'utils';
+.item-box {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    .item {
+        text-align: center;
+        padding-top: 2rem;
+        width: 33.33%;
+        color: black;
+        img {
+            width: 90%;
+            height: 300px;
+        }
+        @include media("<medium") {
+            img {
+                width: 90%;
+                height: 150px;
+            }
+        }
+    }
+    .item+.item {
+        margin-bottom: 1rem;
+    }
+}

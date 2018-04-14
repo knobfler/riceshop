@@ -1,0 +1,61 @@
+
+@import 'utils';
+
+.cart-list {
+    
+    .cart-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .cart-table {
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 2rem;
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 800px;
+
+            @include media("<large") {
+                width: 750px;
+            }
+
+            @include media("<medium") {
+                width: 350px;
+            }
+
+            @include media("<=small") {
+                width: 300px;
+            }
+
+            table, th, td {
+                border: 1px solid black;
+            }
+
+            .remove-button {
+                cursor: pointer;
+            }
+
+        
+
+            img {
+                width: 250px;
+
+                @include media("<medium") {
+                    width: 100px;
+                }
+            }
+
+            @include media("<medium") {
+                font-size: 0.5rem;
+            }
+
+        }
+
+        .submit-button {
+            margin:0 auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+}

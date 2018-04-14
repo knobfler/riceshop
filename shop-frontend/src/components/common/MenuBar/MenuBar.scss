@@ -1,0 +1,26 @@
+
+@import 'utils';
+
+.menu-bar {
+    background: $oc-indigo-6;
+    // height: 2rem;
+
+    .menu-content {
+        display: flex;
+        // width: 100%;
+        .menu {
+            flex: 1;
+            color: white; 
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            &:hover {
+                background: $oc-indigo-7;
+            }
+
+            &:active {
+                background: $oc-indigo-8;
+            }
+        }
+    }
+}

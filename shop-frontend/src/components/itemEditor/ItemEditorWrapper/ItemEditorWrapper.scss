@@ -1,0 +1,21 @@
+
+@import 'utils';
+
+.item-editor-wrapper {
+    
+    .header {
+        background: $oc-indigo-5;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+
+        .back {
+            margin-left: 1rem;
+        }
+        .submit {
+            margin-left: auto;
+            margin-right: 1rem;
+        }
+    }
+
+}

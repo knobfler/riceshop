@@ -1,0 +1,29 @@
+@import 'utils';
+
+.page-template {
+    display: flex;
+    flex-direction: column;
+    .fixed-nav{
+        position: fixed;
+        top: 0;
+        width: 100%;
+
+        // @include media("<wide") {
+        //     width: 100%;
+        // }
+
+        @include media("<large") {
+            width: 100%;
+        }
+    }
+
+    main {
+        background: $oc-gray-1;
+        min-height: calc(100vh - 15rem);
+        margin-top: 7rem;
+        // height: 800px;
+       
+    }
+
+    
+}

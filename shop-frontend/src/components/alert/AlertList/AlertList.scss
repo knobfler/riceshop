@@ -1,0 +1,36 @@
+
+
+@import 'utils';
+
+.alert-table {
+    // padding-top: 1rem;
+    margin: 0 auto;
+    // width: 70%;
+    padding-bottom: 2rem;
+
+    @include media("<medium") {
+        width: 100%;
+    }
+    .alert-item {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background: $oc-gray-3;
+        .alert-title {
+            margin-left: 1rem;
+        }
+
+        .alerted-date {
+            margin-left: 2rem;
+        }
+
+        .writer {
+            margin-left: 3rem;
+        }
+    }
+
+    .alert-item + .alert-item {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid black;
+    }
+}

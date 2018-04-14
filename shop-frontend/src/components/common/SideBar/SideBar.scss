@@ -1,0 +1,36 @@
+@import 'utils';
+.sidebar-wrapper {
+    transform: 0%;
+    transition: all 0.1s ease-in-out;
+    @include material-shadow(5, 2);
+    &.hidden {
+        transform: translate(100%);
+        box-shadow: none;
+    }
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    background: $oc-gray-8;
+    z-index: 1;
+    .menu {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid rgb(85, 85, 85);
+        .menu-item {
+            padding: 1rem;
+            padding-left: 1.5rem;
+            color: white;
+            font-size: 1.125rem;
+            &:active {
+                background: rgb(40, 40, 40);
+            }
+        }
+        .menu-item+.menu-item {
+            border-top: 1px solid rgb(85, 85, 85);
+        }
+    }
+}
