@@ -45,7 +45,7 @@ export default handleActions({
         type: GET_ITEM_BY_ID,
         onSuccess: (state, action) => {
             const { data: item } = action.payload;
-            return state.setIn(['item', 'id'], item.id)
+            return state.setIn(['item', 'id'], item._id)
                         .setIn(['item', 'title'], item.title)
                         .setIn(['item', 'body'], item.body)
                         .setIn(['item', 'price'], item.price)

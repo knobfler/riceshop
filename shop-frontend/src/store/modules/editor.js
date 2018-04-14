@@ -39,8 +39,8 @@ export default handleActions({
   ...pender({
     type: WRITE_ALERT_ITEM,
     onSuccess: (state, action) => {
-      const { id } = action.payload.data;
-      return state.set('alertId', id);
+      const { _id } = action.payload.data;
+      return state.set('alertId', _id);
     },
     onError: (state, action) => {
       return state.set('error', true);
