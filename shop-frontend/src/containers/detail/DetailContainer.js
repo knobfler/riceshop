@@ -9,7 +9,7 @@ import shouldCancel from 'lib/shouldCancel';
 
 class DetailContainer extends Component {
     getAlertDetail = () => {
-        if(shouldCancel()) return;
+        // if(shouldCancel()) return;
         const { AlertActions, id } = this.props;
         AlertActions.readAlertItem(id);
     }

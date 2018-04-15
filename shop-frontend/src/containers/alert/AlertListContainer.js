@@ -8,7 +8,7 @@ import shouldCancel from 'lib/shouldCancel';
 
 class AlertListContainer extends Component {
     getAlertItemList = () => {
-        if(shouldCancel()) return;
+        // if(shouldCancel()) return;
         const {page, AlertActions} = this.props;
         AlertActions.getAlertItemList({page});
     }

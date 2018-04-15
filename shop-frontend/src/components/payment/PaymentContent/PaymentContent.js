@@ -95,7 +95,7 @@ class PaymentContent extends Component {
       return;
     }
 
-    let amount = totalPrice;
+    let amount = parseInt(totalPrice, 10) + 3000;
     let buyer_email = userinfoEmail;
     let buyer_name = userinfoName;
     let buyer_tel = $('select[name=phone-number]').val() + '-' +  userinfoPhonePost + '-' + userinfoPhoneRear;
@@ -384,7 +384,7 @@ class PaymentContent extends Component {
                             onChange={handleChangeInput}/>
                           </div>
                       </div>
-                      <div className={cx('phone-2')}>
+                      {/* <div className={cx('phone-2')}>
                           연락처 2
                           <div className={cx('phone')}>
                           <select>
@@ -408,7 +408,7 @@ class PaymentContent extends Component {
                             onChange={handleChangeInput}
                             value={userinfoSecondPhoneRear}/>
                           </div>
-                      </div>
+                      </div> */}
                   </div>
                   </div>
                 </div>
@@ -463,10 +463,10 @@ class PaymentContent extends Component {
               <div className={cx('payment-info-list')}>
                 <div className={cx('info')}>
                   <div className={cx('title')}>
-                    총 결제 금액
+                    주문 상품 가격
                   </div>
                   <div className={cx('content')}>
-                  {totalPrice}
+                  {totalPrice}원
                   </div>
                 </div>
                 <div className={cx('info')}>
@@ -474,9 +474,18 @@ class PaymentContent extends Component {
                     배송 비용
                   </div>
                   <div className={cx('content')}>
-                    3000
+                    3000원
                   </div>
                 </div>
+                <div className={cx('info')}>
+                  <div className={cx('title')}>
+                    최종 결제 금액
+                  </div>
+                  <div className={cx('content')}>
+                  {parseInt(totalPrice, 10) + 3000}원
+                  </div>
+                </div>
+
               </div>
               <div className={cx('buttons')}>
               <Button theme="gray" onClick={handlePay}>결제하기</Button>

@@ -10,7 +10,7 @@ import shouldCancel from 'lib/shouldCancel';
 class ItemDetailContainer extends Component {
 
   getItemById = async() => {
-    if(shouldCancel()) return;
+    // if(shouldCancel()) return;
     const {ItemActions, id} = this.props;
     try {
       await ItemActions.getItemById(id);

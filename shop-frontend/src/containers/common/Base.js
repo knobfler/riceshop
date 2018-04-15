@@ -21,7 +21,7 @@ class Base extends Component {
 
     componentDidMount() {
         this.initialize();
-        inform();
+        // inform();
     }
     render() {
         return (

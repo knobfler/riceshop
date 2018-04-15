@@ -7,17 +7,15 @@ const {ObjectId} = require('mongoose').Types;
 exports.signup = async(ctx) => {
 
     
-
-    
     const schema = new Joi.object().keys({
         userID: Joi.string().alphanum().min(4).max(15).required(),
         userName: Joi.string().regex(/^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]{1,}/gi),
         userEmail: Joi.string().email(),
         userPassword: Joi.string().regex(/^[a-zA-Z0-9!@#\$%\^\&*\)\(+=.,_-]{6,}$/g),
         userPasswordCheck: Joi.string().regex(/^[a-zA-Z0-9!@#\$%\^\&*\)\(+=.,_-]{6,}$/g),
-        userPostAddress: Joi.string().regex(/^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣0-9\s!@#\$%\^\&*\)\(+=,._-]{1,}$/gi),
+        userPostAddress: Joi.string().regex(/^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣a-zA-Z0-9\s!@#\$%\^\&*\)\(+=,._-]{1,}$/gi),
         userPostCode: Joi.number().integer().min(0).max(99999),
-        userDetailAddress: Joi.string().regex(/^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣0-9\s!@#\$%\^\&*\)\(+=,._-]{1,}$/gi)
+        userDetailAddress: Joi.string().regex(/^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣a-zA-Z0-9\s!@#\$%\^\&*\)\(+=,._-]{1,}$/gi)
     });
 
 

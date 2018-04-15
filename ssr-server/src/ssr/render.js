@@ -16044,14 +16044,14 @@ var initialState = Object(__WEBPACK_IMPORTED_MODULE_1_immutable__["Map"])({
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return inform; });
+/* unused harmony export inform */
 var cancel = "server" === 'browser' && !!window.__PRELOADED_STATE__;
 
 var inform = function inform() {
   cancel = false;
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (function () {
+/* unused harmony default export */ var _unused_webpack_default_export = (function () {
   return cancel;
 });
 
@@ -16318,7 +16318,7 @@ var initialState = Object(__WEBPACK_IMPORTED_MODULE_1_immutable__["Map"])({
     onSuccess: function onSuccess(state, action) {
         var item = action.payload.data;
 
-        return state.setIn(['item', 'id'], item.id).setIn(['item', 'title'], item.title).setIn(['item', 'body'], item.body).setIn(['item', 'price'], item.price).setIn(['item', 'imageNames'], item.imageNames).setIn(['item', 'publishedDate'], item.publishedDate);
+        return state.setIn(['item', 'id'], item._id).setIn(['item', 'title'], item.title).setIn(['item', 'body'], item.body).setIn(['item', 'price'], item.price).setIn(['item', 'imageNames'], item.imageNames).setIn(['item', 'publishedDate'], item.publishedDate);
     }
 }), _defineProperty({}, CHANGE_PRICE_BY_SELECTION, function (state, action) {
     console.log(action.payload);
@@ -18052,9 +18052,9 @@ var initialState = Object(__WEBPACK_IMPORTED_MODULE_1_immutable__["Map"])({
 }), _Object$assign), Object(__WEBPACK_IMPORTED_MODULE_2_redux_pender__["pender"])({
   type: WRITE_ALERT_ITEM,
   onSuccess: function onSuccess(state, action) {
-    var id = action.payload.data.id;
+    var _id = action.payload.data._id;
 
-    return state.set('alertId', id);
+    return state.set('alertId', _id);
   },
   onError: function onError(state, action) {
     return state.set('error', true);
@@ -35086,7 +35086,7 @@ var AlertListContainer = function (_Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AlertListContainer.__proto__ || Object.getPrototypeOf(AlertListContainer)).call.apply(_ref, [this].concat(args))), _this), _this.getAlertItemList = function () {
-            if (Object(__WEBPACK_IMPORTED_MODULE_6_lib_shouldCancel__["a" /* default */])()) return;
+            // if(shouldCancel()) return;
             var _this$props = _this.props,
                 page = _this$props.page,
                 AlertActions = _this$props.AlertActions;
@@ -38715,35 +38715,28 @@ var ProductListContainer = function (_Component) {
                 while (1) {
                     switch (_context.prev = _context.next) {
                         case 0:
-                            if (!Object(__WEBPACK_IMPORTED_MODULE_6_lib_shouldCancel__["a" /* default */])()) {
-                                _context.next = 2;
-                                break;
-                            }
-
-                            return _context.abrupt('return');
-
-                        case 2:
+                            // if(shouldCancel()) return;
                             ItemActions = _this.props.ItemActions;
-                            _context.prev = 3;
-                            _context.next = 6;
+                            _context.prev = 1;
+                            _context.next = 4;
                             return ItemActions.getItemList();
 
-                        case 6:
-                            _context.next = 11;
+                        case 4:
+                            _context.next = 9;
                             break;
 
-                        case 8:
-                            _context.prev = 8;
-                            _context.t0 = _context['catch'](3);
+                        case 6:
+                            _context.prev = 6;
+                            _context.t0 = _context['catch'](1);
 
                             console.log(_context.t0);
 
-                        case 11:
+                        case 9:
                         case 'end':
                             return _context.stop();
                     }
                 }
-            }, _callee, _this2, [[3, 8]]);
+            }, _callee, _this2, [[1, 6]]);
         })), _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -38985,7 +38978,7 @@ var DetailContainer = function (_Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DetailContainer.__proto__ || Object.getPrototypeOf(DetailContainer)).call.apply(_ref, [this].concat(args))), _this), _this.getAlertDetail = function () {
-            if (Object(__WEBPACK_IMPORTED_MODULE_6_lib_shouldCancel__["a" /* default */])()) return;
+            // if(shouldCancel()) return;
             var _this$props = _this.props,
                 AlertActions = _this$props.AlertActions,
                 id = _this$props.id;
@@ -39513,35 +39506,28 @@ var PaymentContainer = function (_Component) {
                 while (1) {
                     switch (_context.prev = _context.next) {
                         case 0:
-                            if (!Object(__WEBPACK_IMPORTED_MODULE_9_lib_shouldCancel__["a" /* default */])()) {
-                                _context.next = 2;
-                                break;
-                            }
-
-                            return _context.abrupt('return');
-
-                        case 2:
+                            // if(shouldCancel()) return;
                             PaymentActions = _this.props.PaymentActions;
-                            _context.prev = 3;
-                            _context.next = 6;
+                            _context.prev = 1;
+                            _context.next = 4;
                             return PaymentActions.getUserInfo({ userID: localStorage.loggedMember });
 
-                        case 6:
-                            _context.next = 11;
+                        case 4:
+                            _context.next = 9;
                             break;
 
-                        case 8:
-                            _context.prev = 8;
-                            _context.t0 = _context['catch'](3);
+                        case 6:
+                            _context.prev = 6;
+                            _context.t0 = _context['catch'](1);
 
                             console.log(_context.t0);
 
-                        case 11:
+                        case 9:
                         case 'end':
                             return _context.stop();
                     }
                 }
-            }, _callee, _this2, [[3, 8]]);
+            }, _callee, _this2, [[1, 6]]);
         })), _this.changeInput = function (_ref3) {
             var name = _ref3.name,
                 value = _ref3.value;
@@ -40523,35 +40509,28 @@ var ItemDetailContainer = function (_Component) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              if (!Object(__WEBPACK_IMPORTED_MODULE_8_lib_shouldCancel__["a" /* default */])()) {
-                _context.next = 2;
-                break;
-              }
-
-              return _context.abrupt('return');
-
-            case 2:
+              // if(shouldCancel()) return;
               _this$props = _this.props, ItemActions = _this$props.ItemActions, id = _this$props.id;
-              _context.prev = 3;
-              _context.next = 6;
+              _context.prev = 1;
+              _context.next = 4;
               return ItemActions.getItemById(id);
 
-            case 6:
-              _context.next = 11;
+            case 4:
+              _context.next = 9;
               break;
 
-            case 8:
-              _context.prev = 8;
-              _context.t0 = _context['catch'](3);
+            case 6:
+              _context.prev = 6;
+              _context.t0 = _context['catch'](1);
 
               console.log(_context.t0);
 
-            case 11:
+            case 9:
             case 'end':
               return _context.stop();
           }
         }
-      }, _callee, _this2, [[3, 8]]);
+      }, _callee, _this2, [[1, 6]]);
     })), _this.initializeEachItemTotalPrice = function (_ref3) {
       var eachItemPrice = _ref3.eachItemPrice;
       var CartActions = _this.props.CartActions;
@@ -43199,7 +43178,7 @@ var Base = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.initialize();
-            Object(__WEBPACK_IMPORTED_MODULE_5_lib_shouldCancel__["b" /* inform */])();
+            // inform();
         }
     }, {
         key: 'render',

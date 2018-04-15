@@ -46,6 +46,7 @@ class PaymentContainer extends Component {
             document.cookie = name + "=" + escape(value) + "; path=/; expires=" + now.toUTCString() + ";"
           }
 
+          console.log(getCookie('cartList'));
 
         if(typeof(getCookie('cartList')) !== undefined && getCookie('cartList').length !== 0 && getCookie('cartList') !== "") {
             // console.log(getCookie('cartList'));
@@ -58,7 +59,7 @@ class PaymentContainer extends Component {
     }
 
     getUserInfo = async () => {
-        if(shouldCancel()) return;
+        // if(shouldCancel()) return;
         const { PaymentActions } = this.props;
 
         try {

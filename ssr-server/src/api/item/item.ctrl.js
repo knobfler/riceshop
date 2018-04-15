@@ -1,6 +1,30 @@
 const Item = require('models/item');
 const fs = require('fs');
 const path = require('path');
+
+const { ObjectId } = require('mongoose').Types;
+
+exports.checkObjectId = async (ctx, next) => {
+    const { id } = ctx.params;
+
+    if(!ObjectId.isValid(id)){
+        ctx.status = 400;
+        return;
+    }
+
+    return next();
+
+}
+
+exports.checkLogin = async (ctx, next) => {
+    if(!ctx.session.logged) {
+        ctx.status = 401;
+        return null;
+    }
+
+    return next();
+}
+
 exports.writeItem = async (ctx) => {
     const { title, markdown, price, images } = ctx.request.body;
     const item = new Item({
@@ -51,6 +75,38 @@ exports.getItemById = async (ctx) => {
             return;
         }
         ctx.body = item;
+    } catch(e){
+        ctx.throw(500, e);
+    }
+}
+
+exports.removeItemById = async (ctx) => {
+    const { id } = ctx.params;
+
+    try {
+        await Item.findByIdAndRemove(id).exec();
+        ctx.status = 204;
+    } catch(e){
+        ctx.throw(500, e);
+    }
+}
+
+exports.updateItemById = async (ctx) => {
+    const { id } = ctx.params;
+
+    const { title, markdown, price, images } = ctx.request.body;
+
+    try {
+        const item = await Item.findByIdAndUpdate(id, {title,
+            body: markdown,
+            price,
+            imageNames: images}, {new: true}).exec();
+        if(!item) {
+            ctx.status = 404;
+            return;
+        }
+
+        ctx.body = post;
     } catch(e){
         ctx.throw(500, e);
     }

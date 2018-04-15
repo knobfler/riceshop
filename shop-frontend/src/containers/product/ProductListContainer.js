@@ -7,7 +7,7 @@ import shouldCancel from 'lib/shouldCancel';
 
 class ProductListContainer extends Component {
     getItemList = async () => {
-        if(shouldCancel()) return;
+        // if(shouldCancel()) return;
         const { ItemActions } = this.props;
 
         try {
